@@ -1,0 +1,13 @@
+camunda.bpm.client:
+  base-url: http://localhost:8080/engine-rest # the URL pointing to the Camunda Platform Runtime REST API
+  lock-duration: 10000 # defines how many milliseconds the External Tasks are locked until they can be fetched again
+  subscriptions:
+    charge-card: # topic name of the External Service Task
+      variable-names: [item, amount, sid, token] # our business logic doesn't require any variables, so don't fetch them
+      process-definition-key: payment-retrieval # only filter for External Tasks with this process definition key
+    payment-approval:
+      variable-names: [sid]
+      process-definition-key: payment-retrieval
+    creditScoreChecker:
+      variable-names: [defaultScore]
+      process-definition-key: loan_process
