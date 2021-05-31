@@ -40,3 +40,19 @@ curl --location --request POST 'http://localhost:8080/engine-rest/process-defini
     }
 }'
 ```
+## DMN sample
+dmn tables:
+<br/>
+![image](info/dmn-order-dinner-schema.png)
+
+1. create decision evaluation process:
+<br/>
+![image](info/dmn-order-dinner-00.png)
+
+2. provide input:
+<br/>
+![image](info/dmn-order-dinner-01.png)
+
+3. view results:
+<br/>
+![image](info/dmn-order-dinner-02.png)
