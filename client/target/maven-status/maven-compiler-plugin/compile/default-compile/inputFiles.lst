@@ -1,0 +1,10 @@
+D:\tmp\my-project\client\src\main\java\com\example\worker\payment\port\camunda\ChargeCardWorker.java
+D:\tmp\my-project\client\src\main\java\com\example\worker\payment\domain\UserCardActivityTester.java
+D:\tmp\my-project\client\src\main\java\com\example\worker\payment\port\camunda\PaymentApprovalDelegate.java
+D:\tmp\my-project\client\src\main\java\com\example\worker\Application.java
+D:\tmp\my-project\client\src\main\java\com\example\worker\payment\domain\CardCharger.java
+D:\tmp\my-project\client\src\main\java\com\example\worker\payment\infrastructure\SecurityUserActivityScoreStore.java
+D:\tmp\my-project\client\src\main\java\com\example\worker\payment\domain\CardChargeProver.java
+D:\tmp\my-project\client\src\main\java\com\example\worker\loan\CreditScoreGenerator.java
+D:\tmp\my-project\client\src\main\java\com\example\worker\payment\domain\CardActivity.java
+D:\tmp\my-project\client\src\main\java\com\example\worker\payment\domain\CardPayment.java
