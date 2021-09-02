@@ -1,3 +1,5 @@
+server:
+  port: 8081
 camunda.bpm.client:
   base-url: http://localhost:8080/engine-rest # the URL pointing to the Camunda Platform Runtime REST API
   lock-duration: 10000 # defines how many milliseconds the External Tasks are locked until they can be fetched again
@@ -11,3 +13,6 @@ camunda.bpm.client:
     creditScoreChecker:
       variable-names: [defaultScore]
       process-definition-key: loan_process
+    fundRequestProcessing:
+      variable-names: [amount]
+      process-definition-key: fund_procurement_process
