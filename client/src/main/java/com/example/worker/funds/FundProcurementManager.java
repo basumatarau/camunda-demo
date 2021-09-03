@@ -22,10 +22,10 @@ public class FundProcurementManager implements ExternalTaskHandler {
     @Override
     public void execute(ExternalTask externalTask, ExternalTaskService externalTaskService) {
 
+        log.info("The External Task {} has been completed! funds have been requested for loan issue",
+                 externalTask.getId());
+
         // complete the external task
         externalTaskService.complete(externalTask, Collections.singletonMap("success", Boolean.TRUE));
-
-        log.info("The External Task {} has been completed! {} - funds have been requested",
-                 externalTask.getId(), externalTask.getVariable("amount"));
     }
 }

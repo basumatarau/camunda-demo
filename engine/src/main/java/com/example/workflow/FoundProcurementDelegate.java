@@ -2,6 +2,7 @@ package com.example.workflow;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.camunda.bpm.engine.variable.Variables;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -14,7 +15,8 @@ public class FoundProcurementDelegate implements JavaDelegate {
     public void execute(DelegateExecution execution) throws Exception {
 
         Map<String, Object> variables = new HashMap<>();
-        variables.put("amount", execution.getVariable("amount"));
+
+        variables.put("scoreValue", Variables.integerValue(((Integer) execution.getVariable("score"))));
         execution.getProcessEngineServices().getRuntimeService()
                  .startProcessInstanceByKey("fund_procurement_process", variables);
 

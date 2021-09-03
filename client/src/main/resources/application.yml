@@ -16,3 +16,6 @@ camunda.bpm.client:
     fundRequestProcessing:
       variable-names: [amount]
       process-definition-key: fund_procurement_process
+    requestRejecter:
+      variable-names: [amount]
+      process-definition-key: loan_process

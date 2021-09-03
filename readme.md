@@ -40,6 +40,14 @@ curl --location --request POST 'http://localhost:8080/engine-rest/process-defini
     }
 }'
 ```
+## BPMN sample#2
+dmn tables:
+<br/>
+![image](info/bpmn-loan-granting-00.png)
+
+execute both applications and proceed to http://localhost:8080/camunda/app/cockpit/default/#/processes
+observe the console output
+
 ## DMN sample
 dmn tables:
 <br/>

@@ -3,7 +3,13 @@
   <bpmn:collaboration id="Collaboration_123zkp8">
     <bpmn:participant id="Participant_06dh3ny" name="Loan granting context" processRef="loan_process" />
     <bpmn:participant id="Participant_15sqvx2" name="Fund procurement context" processRef="fund_procurement_process" />
-    <bpmn:messageFlow id="Flow_0ifrrwd" sourceRef="Activity_145xgt2" targetRef="Event_18avi23" />
+    <bpmn:messageFlow id="Flow_0ifrrwd" sourceRef="Activity_145xgt2" targetRef="Event_18avi23">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property />
+        </camunda:properties>
+      </bpmn:extensionElements>
+    </bpmn:messageFlow>
   </bpmn:collaboration>
   <bpmn:process id="loan_process" name="Granting Loans" isExecutable="true">
     <bpmn:serviceTask id="Task_1lvjtd4" name="Check credit score" camunda:type="external" camunda:topic="creditScoreChecker">
@@ -50,6 +56,11 @@
       </bpmn:startEvent>
       <bpmn:sequenceFlow id="SequenceFlow_04c54bl" sourceRef="StartEvent_01840xx" targetRef="ExclusiveGateway_12xhuxz" />
       <bpmn:serviceTask id="Task_0j0sjlk" name="Reject loan request" camunda:type="external" camunda:topic="requestRejecter">
+        <bpmn:extensionElements>
+          <camunda:inputOutput>
+            <camunda:inputParameter name="Input_282n519">${score}</camunda:inputParameter>
+          </camunda:inputOutput>
+        </bpmn:extensionElements>
         <bpmn:incoming>SequenceFlow_0vpum3q</bpmn:incoming>
         <bpmn:outgoing>SequenceFlow_1p8qb0a</bpmn:outgoing>
       </bpmn:serviceTask>
@@ -76,6 +87,11 @@
   </bpmn:process>
   <bpmn:process id="fund_procurement_process" isExecutable="true">
     <bpmn:serviceTask id="Activity_16189q3" name="Fund request processing" camunda:type="external" camunda:topic="fundRequestProcessing">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="Input_0dkotrb">${scoreValue}</camunda:inputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_08nmmq9</bpmn:incoming>
       <bpmn:outgoing>Flow_0olklck</bpmn:outgoing>
     </bpmn:serviceTask>
